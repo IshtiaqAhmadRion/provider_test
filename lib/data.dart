@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
 
-class Data extends ChangeNotifier{
-
+class Data extends ChangeNotifier {
   int value = 0;
 
-  Increment(){
+  Increment() {
     value++;
+    notifyListeners();
   }
-
-  
 }
