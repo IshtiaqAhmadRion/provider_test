@@ -7,7 +7,7 @@ import 'package:provider_test/data.dart';
 
 void main() {
   runApp(ChangeNotifierProvider(
-    create: (Context)=> Data(),
+    create:  (Context)=> Data(),
 
     
     child: MyApp()));
