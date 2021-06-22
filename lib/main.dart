@@ -24,6 +24,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  int value = 0;
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -33,9 +34,9 @@ class _HomePageState extends State<HomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-              "Data",
+              value.toString(),
             ),
-            SizedBox(height: 10),
+            SizedBox(height: 10), 
             // ignore: deprecated_member_use
             RaisedButton(onPressed: () {}),
             SizedBox(height: 10),
