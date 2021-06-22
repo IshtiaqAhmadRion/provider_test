@@ -9,9 +9,8 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    
     return MaterialApp(
-      debugShowCheckedModeBanner:  false,
+      debugShowCheckedModeBanner: false,
       home: HomePage(),
     );
   }
@@ -27,29 +26,24 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
-    
     return SafeArea(
-      child: Scaffold(
-
-        body: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text(
-                "Data",
-                
-                ),
-              // ignore: deprecated_member_use
-              RaisedButton(onPressed: (){
-
-              }),
-               // ignore: deprecated_member_use
-               RaisedButton(onPressed: (){
-
-              })
-            ],
-          ),
+        child: Scaffold(
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(
+              "Data",
+            ),
+            SizedBox(height: 10),
+            // ignore: deprecated_member_use
+            RaisedButton(onPressed: () {}),
+            SizedBox(height: 10),
+            // ignore: deprecated_member_use
+            RaisedButton(onPressed: () {})
+          ],
         ),
-      ));
+      ),
+    ));
   }
 }
