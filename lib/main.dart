@@ -1,16 +1,10 @@
-
-
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:provider_test/data.dart';
-
+import 'package:provider_test/receive.dart';
 
 void main() {
-  runApp(ChangeNotifierProvider(
-    create:  (Context)=> Data(),
-
-    
-    child: MyApp()));
+  runApp(ChangeNotifierProvider(create: (Context) => Data(), child: MyApp()));
 }
 
 class MyApp extends StatelessWidget {
@@ -33,10 +27,9 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-
   @override
   Widget build(BuildContext context) {
-    final providerData = Provider.of(context);
+    final providerData = Provider.of<Data>(context);
     return SafeArea(
         child: Scaffold(
       body: Center(
@@ -46,12 +39,17 @@ class _HomePageState extends State<HomePage> {
             Text(
               providerData.value.toString(),
             ),
-            SizedBox(height: 10), 
-            // ignore: deprecated_member_use
-            RaisedButton(onPressed: () {}),
             SizedBox(height: 10),
             // ignore: deprecated_member_use
-            RaisedButton(onPressed: () {})
+            RaisedButton(onPressed: () {
+              providerData.Increment();
+            }),
+            SizedBox(height: 10),
+            // ignore: deprecated_member_use
+            RaisedButton(onPressed: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => ReceiveData()));
+            })
           ],
         ),
       ),
