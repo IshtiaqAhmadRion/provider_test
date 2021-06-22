@@ -1,7 +1,16 @@
+
+
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:provider_test/data.dart';
+
 
 void main() {
-  runApp(MyApp());
+  runApp(ChangeNotifierProvider(
+    create: (Context)=> Data(),
+
+    
+    child: MyApp()));
 }
 
 class MyApp extends StatelessWidget {
@@ -24,9 +33,10 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  int value = 0;
+
   @override
   Widget build(BuildContext context) {
+    final providerData = Provider.of(context);
     return SafeArea(
         child: Scaffold(
       body: Center(
@@ -34,7 +44,7 @@ class _HomePageState extends State<HomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-              value.toString(),
+              providerData.value.toString(),
             ),
             SizedBox(height: 10), 
             // ignore: deprecated_member_use
