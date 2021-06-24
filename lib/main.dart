@@ -4,6 +4,7 @@ import 'package:provider_test/data.dart';
 import 'package:provider_test/receive.dart';
 
 void main() {
+  // ignore: non_constant_identifier_names
   runApp(ChangeNotifierProvider(create: (Context) => Data(), child: MyApp()));
 }
 
@@ -42,7 +43,7 @@ class _HomePageState extends State<HomePage> {
             SizedBox(height: 10),
             // ignore: deprecated_member_use
             RaisedButton(onPressed: () {
-              providerData.Increment();
+              providerData.increment();
             }),
             SizedBox(height: 10),
             // ignore: deprecated_member_use
