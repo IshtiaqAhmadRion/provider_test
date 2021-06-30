@@ -50,7 +50,15 @@ class _HomePageState extends State<HomePage> {
             RaisedButton(onPressed: () {
               Navigator.push(context,
                   MaterialPageRoute(builder: (context) => ReceiveData()));
-            })
+            }),
+            // ignore: deprecated_member_use
+            RaisedButton(onPressed: () {
+              providerData.adder();
+            }),
+            SizedBox(height: 10),
+            Text(
+              providerData.add.toString(),
+            ),
           ],
         ),
       ),
